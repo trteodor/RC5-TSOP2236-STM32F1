@@ -1,4 +1,5 @@
 # STM32_Teo
+My proposal to receive data from the remote control. I tested this code with the TSOP2236 chip
 /*How use it?
 *  Its easy, follow this steps:
 *  1. Call "RC5_IR_EXTI_GPIO_ReceiveAndDecodeFunction" function on evry falling edge of the Input PIN. For example from External interrupt
