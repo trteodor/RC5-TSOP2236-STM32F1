@@ -44,7 +44,7 @@ RC5_Status RC5_100usTimer() //This function have to be called evry 100us
 
 RC5_Status RC5_IR_EXTI_GPIO_ReceiveAndDecodeFunction(RC5Struct *RC5_Handle)
 {
-	if( ( (RC5_Handle->ThisObjectRC5Time+160 )  >  RC5_Time  &&  (RC5_Handle->ThisObjectRC5Time+100 ) <   RC5_Time   )  ) //Receive Sync Header
+	if( ( (RC5_Handle->ThisObjectRC5Time+160 )  >  RC5_Time  &&  (RC5_Handle->ThisObjectRC5Time+90 ) <   RC5_Time   )  ) //Receive Sync Header
 	{
 		RC5_Handle->DataTableIndex=0;
 

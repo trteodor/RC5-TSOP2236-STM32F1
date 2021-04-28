@@ -18,7 +18,6 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <RC5 TSOP2236.h>
 #include "main.h"
 #include "tim.h"
 #include "usart.h"
@@ -26,6 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "RC5 TSOP2236.h"
 #include <stdio.h>
 /* USER CODE END Includes */
 
@@ -55,7 +55,10 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	RC5_IR_EXTI_GPIO_ReceiveAndDecodeFunction(&TSOP2236);
+	if(GPIO_Pin==GPIO_PIN_7)
+	{
+		RC5_IR_EXTI_GPIO_ReceiveAndDecodeFunction(&TSOP2236);
+	}
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
